@@ -20,8 +20,7 @@ Open project directory and run:
 
 ```
 bundle exec rspec
-```
-
+``
 To specify browser either edit `.env` file or run e.g.:
 
 ```

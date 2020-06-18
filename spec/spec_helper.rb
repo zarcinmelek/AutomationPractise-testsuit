@@ -5,7 +5,6 @@ require 'session_helpers'
 require 'page_buttons_helpers'
 require 'page_actions_helpers'
 
-
 RSpec.configure do |config|
   config.include EnvHelpers
   config.include SessionHelpers

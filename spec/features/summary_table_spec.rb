@@ -10,10 +10,7 @@ RSpec.describe 'checks proper behaviors caused by actions on summary table', typ
       expect(page).to have_content('Total')
       expect(page).to have_content('Quantity')
 
-
-
       remove_from_cart_button
-
     end
     expect(page).to have_content('empty')
   end
