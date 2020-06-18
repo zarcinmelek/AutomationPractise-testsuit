@@ -11,7 +11,7 @@ RSpec.configure do |config|
   config.include PageButtonsHelpers
   config.include PageActionsHelpers
 
-  config.order = :defined
+  config.order = :random
 
   config.after(:each) do
     reset_sessions

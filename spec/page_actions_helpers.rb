@@ -24,4 +24,49 @@ module PageActionsHelpers
     expect(page).to have_content('2 Products')
   end
 
+  def summary_step_action
+    login
+    add_to_cart_action
+    cart_dropdown
+    checkout_button
+    expect(page).to have_content('Summary')
+    expect(page).to have_content('Product')
+    expect(page).to have_content('Description')
+    expect(page).to have_content('Avail.')
+    expect(page).to have_content('Unit price')
+    expect(page).to have_content('Qty')
+    expect(page).to have_content('INVOICE ADDRESS')
+    expect(page).to have_content('DELIVERY ADDRESS')
+    expect(page).to have_content('Printed Summer Dress')
+  end
+
+  def address_step_action
+    summary_step_action
+    proceed_to_checkout_summary_button
+    expect(page).to have_content('YOUR DELIVERY ADDRESS')
+    expect(page).to have_content('YOUR BILLING ADDRESS')
+  end
+
+  def shipping_step_action
+    address_step_action
+    proceed_to_checkout_address_button
+    term_of_service_checkbox
+  end
+
+  def payment_by_check_step_action
+    shipping_step_action
+    proceed_to_checkout_shipping_button
+    expect(page).to have_content('Product')
+    expect(page).to have_content('Description')
+    expect(page).to have_content('Avail.')
+    expect(page).to have_content('Unit price')
+    expect(page).to have_content('Qty')
+    expect(page).to have_content('Printed Summer Dress')
+    expect(page).to have_content('TOTAL')
+
+    expect(page).to have_content('check')
+
+    pay_by_check_button
+    expect(page).to have_content('You have chosen to pay by check')
+  end
 end

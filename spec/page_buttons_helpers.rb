@@ -20,6 +20,7 @@ module PageButtonsHelpers
     find(:xpath, '//i[@class="icon-th-large"]').click
   end
 
+
   def list_view
     find(:xpath, '//i[@class="icon-th-list"]').click
   end
@@ -60,7 +61,92 @@ module PageButtonsHelpers
     find('i[class="icon-minus"]', match: :first).click
   end
 
+  def proceed_to_checkout_summary_button
+    find('a[title="Proceed to checkout"]', match: :first).click
+  end
+
+  def proceed_to_checkout_shipping_button
+    find('button[name="processCarrier"]').click
+  end
+
   def proceed_to_checkout_button
+    find('a[title="Proceed to checkout"]', match: :first).click
+  end
+
+  def proceed_to_checkout_address_button
+    find('button[name="processAddress"]').click
+  end
+
+  def update_address_button
+    find('a[title="Update"]', match: :first).click
+  end
+
+  def address_city_input
+    find('input[id="city"]')
+  end
+
+  def submit_address_button
+    find('button[id=submitAddress]').click
+  end
+
+  def choose_billing_address_select
+    find(:xpath, '//select[@id="id_address_invoice"]', :visible => false).click
+  end
+
+  def my_second_address_option
+    find(:xpath, '//select[@id="id_address_delivery"]//option[contains(text(),"My second address")]').click
+  end
+
+  def my_second_home_option
+    find(:xpath, '//select[@id="id_address_delivery"]//option[contains(text(),"My second home")]').click
+  end
+
+  def billing_address_checkbox
+    find('input[type="checkbox"]',:visible => false).click
+  end
+
+  def choose_delivery_address_select
+    find(:xpath, '//select[@id="id_address_delivery"]', :visible => false).click
+  end
+
+  def comment_input
+    find(:xpath, '//textarea[@name="message"]')
+  end
+
+  def close_popup_button
+    find('a[title="Close"]').click
+  end
+
+  def term_of_service_checkbox
+    find(:xpath, '//input[@id="cgv"]', :visible => false).click
+  end
+
+  def pay_by_check_button
+    find('a[class="cheque"]').click
+  end
+
+  def confirm_order_button
+    find('button[class="button btn btn-default button-medium"]').click
+  end
+
+  def back_to_orders_button
+    find('a[title="Back to orders"]').click
+  end
+
+  def history_order_details_button
     find('i[class="icon-chevron-right right"]', match: :first).click
   end
+
+  def account_details_button
+    find('a[class="account"]').click
+  end
+
+  def order_history_button
+    find('a[title="Orders"]').click
+  end
+
+  def reorder_button
+    find('a[title="Reorder"]', match: :first).click
+  end
+
 end

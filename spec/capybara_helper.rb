@@ -1,4 +1,6 @@
 require 'capybara/rspec'
+#require 'capybara-screenshot/rspec'
+
 
 
 Capybara.default_driver =
