@@ -10,7 +10,7 @@ RSpec.describe 'Removes added product from cart dropdown', type: :feature do
       expect(page).to have_content('Total')
 
       ##TODO: expect quantity button after it'll be implemented
-
+      
 
       remove_from_cart_button
 

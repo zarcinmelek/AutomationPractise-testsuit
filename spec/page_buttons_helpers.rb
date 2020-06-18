@@ -43,4 +43,24 @@ module PageButtonsHelpers
   def most_recent_product_in_cart_name
     find(:xpath, '//a[@class="cart_block_product_name"]').click
   end
+
+  def checkout_button
+    find(:xpath, '//span[contains(text(),"Check out")]').click
+  end
+
+  def remove_from_summary_button
+    find('a[title="Delete"]', match: :first).click
+  end
+
+  def plus_quantity_summary_button
+    find('i[class="icon-plus"]', match: :first).click
+  end
+
+  def minus_quantity_summary_button
+    find('i[class="icon-minus"]', match: :first).click
+  end
+
+  def proceed_to_checkout_button
+    find('i[class="icon-chevron-right right"]', match: :first).click
+  end
 end
