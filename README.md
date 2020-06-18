@@ -16,11 +16,11 @@ bundle install
 
 ### Running
 
-Open project directory and run:
+Open project directory via terminal and run:
 
 ```
 bundle exec rspec
-``
+```
 To specify browser either edit `.env` file or run e.g.:
 
 ```
@@ -28,3 +28,9 @@ BROWSER=firefox bundle exec rspec
 ```
 
 Available values are `firefox` and `chrome` but note that you have to install utilities for each first to make it work.
+```
+```
+To run certain tests: Open project directory via terminal and run
+```
+bundle exec rspec spec/feature/[NameOfTheTest]
+```

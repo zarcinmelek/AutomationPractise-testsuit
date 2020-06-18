@@ -1,5 +1,5 @@
 require 'capybara/rspec'
-#require 'capybara-screenshot/rspec'
+require 'capybara-screenshot/rspec'
 
 
 
